@@ -6,6 +6,9 @@ Git Command Notes
 
 ```bash
 git add -A ; git commit -am "Update" ; git push
+```
+
+```bash
 git add -A ; git commit -am "Initial commit" ; git push
 ```
 
