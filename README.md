@@ -15,7 +15,7 @@ git add -A ; git commit -am "Initial commit" ; git push
 ## Clone with specific SSH key (repo then knows to use this key)
 
 ```bash
-git clone -c "core.sshCommand=ssh -i ~/.ssh/key1.key" git@github.com:<repo>/<repo.git>.git
+git clone -c "core.sshCommand=ssh -i ~/.ssh/key1.key" git@github.com:<repo>/<repo.git>
 ```
 
 ## Reset local repo back to same as remote (lose local changes)
@@ -59,7 +59,7 @@ The fix pull error command will need to be run if the repo exists on another mac
 ```bash
 git checkout main
 git pull
-find . -name ".DS_Store" -print -delete
+[[ "$(uname)" == "Darwin" ]] && find . -name ".DS_Store" -print -delete # rm macOS Finder .DS_Store litter
 git add -A ; git commit -am "Update" ; git push
 git checkout --orphan latest_branch
 git add -A
